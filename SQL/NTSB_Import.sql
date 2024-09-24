@@ -1,0 +1,369 @@
+-- -- create database ntsb;
+
+-- use ntsb;
+
+-- SHOW GLOBAL VARIABLES LIKE 'local_infile';
+
+-- SET GLOBAL local_infile=1;
+
+-- SET SQL_SAFE_UPDATES = 0;
+
+-- -- delete from events;
+
+-- drop table aircraft;
+-- drop table engines;
+-- drop table events;
+-- drop table Findings;
+-- drop table Flight_Crew;
+
+-- create table events(
+-- ev_id text,
+-- ntsb_no text,
+-- ev_type char(3),
+-- ev_date text,
+-- ev_dow char(2),
+-- ev_time int,
+-- ev_tmzn varchar(3),
+-- ev_city text,
+-- ev_state varchar(2),
+-- ev_country varchar(3),
+-- ev_site_zipcode int,
+-- ev_year int,
+-- ev_month int,
+-- mid_air varchar(1),
+-- on_ground_collision varchar(1),
+-- latitude text,
+-- longitude text,
+-- latlong_acq varchar(4),
+-- apt_name text,
+-- ev_nr_apt_id varchar(4),
+-- ev_nr_apt_loc varchar(4),
+-- apt_dist float,
+-- apt_dir int,
+-- apt_elev int,
+-- wx_brief_comp int,
+-- wx_src_iic varchar(4),
+-- wx_obs_time int,
+-- wx_obs_dir int,
+-- wx_obs_fac_id varchar(5),
+-- wx_obs_elev int,
+-- wx_obs_dist int,
+-- wx_obs_tmzn varchar(3),
+-- light_cond varchar(4),
+-- sky_cond_nonceil varchar(4),
+-- sky_nonceil_ht int,
+-- sky_ceil_ht int,
+-- sky_cond_ceil varchar(4),
+-- vis_rvr int,
+-- vis_rvv int,
+-- vis_sm float,
+-- wx_temp int,
+-- wx_dew_pt int,
+-- wind_dir_deg int,
+-- wind_dir_ind char(1),
+-- wind_vel_kts int,
+-- wind_vel_ind char(1),
+-- gust_ind char(1),
+-- gust_kts int,
+-- altimeter float,
+-- wx_dens_alt int,
+-- wx_int_precip int,
+-- metar text,
+-- ev_highest_injury varchar(4),
+-- inj_f_grnd int,
+-- inj_m_grnd int,
+-- inj_s_grnd int,
+-- inj_tot_f int,
+-- inj_tot_m int,
+-- inj_tot_n int,
+-- inj_tot_s int,
+-- inj_tot_t int,
+-- invest_agy char(1),
+-- ntsb_docket int,
+-- ntsb_notf_from int,
+-- ntsb_notf_date int,
+-- ntsb_notf_tm int,
+-- fiche_number int,
+-- lchg_date text,
+-- lchg_userid text,
+-- wx_cond_basic varchar(3),
+-- faa_dist_office int,
+-- dec_latitude float,
+-- dec_longitude float
+-- );
+
+-- load data local infile '/Users/aidencamilleri/Desktop/Data221/NTSB/NTSBData/events.csv'
+-- into table events
+-- fields terminated by ","
+-- optionally enclosed by '"'
+-- lines terminated by "\n"
+-- ignore 1 rows;
+
+-- create table aircraft(
+-- ev_id text,
+-- Aircraft_Key int,
+-- regis_no text,
+-- ntsb_no text,
+-- acft_missing char(1),
+-- far_part varchar(4),
+-- flt_plan_filed varchar(4),
+-- flight_plan_activated char(1),
+-- damage varchar(4),
+-- acft_fire varchar(4),
+-- acft_expl varchar(4),
+-- acft_make text,
+-- acft_model text,
+-- acft_series text,
+-- acft_serial_no text,
+-- cert_max_gr_wt int,
+-- acft_category varchar(4),
+-- acft_reg_cls char(1),
+-- homebuilt char(1),
+-- fc_seats int,
+-- cc_seats int,
+-- pax_seats int,
+-- total_seats int,
+-- num_eng int,
+-- fixed_retractable varchar(4),
+-- type_last_insp varchar(4),
+-- date_last_insp text, 
+-- afm_hrs_last_insp float,
+-- afm_hrs float,
+-- elt_install char(1),
+-- elt_oper char(1),
+-- elt_aided_loc_ev char(1),
+-- elt_type varchar(4),
+-- owner_acft text,
+-- owner_street text,
+-- owner_city text,
+-- owner_state char(2),
+-- owner_country varchar(3),
+-- owner_zip text,
+-- oper_individual_name char(1),
+-- oper_name text,
+-- oper_same int,
+-- oper_dba text,
+-- oper_addr_same int,
+-- oper_street text,
+-- oper_city text,
+-- oper_state char(2),
+-- oper_country varchar(3),
+-- oper_zip text,
+-- oper_code varchar(4),
+-- certs_held char(1),
+-- oprtng_cert int,
+-- oper_cert int,
+-- oper_cert_num text,
+-- oper_sched varchar(4),
+-- oper_dom_int char(3),
+-- oper_pax_cargo varchar(4),
+-- type_fly varchar(4),
+-- second_pilot char(1),
+-- dprt_pt_same_ev char(1),
+-- dprt_apt_id varchar(4),
+-- dprt_city text,
+-- dprt_state char(2),
+-- dprt_country varchar(3),
+-- dprt_time int,
+-- dprt_timezn int,
+-- dest_same_local int,
+-- dest_apt_id varchar(4),
+-- dest_city text,
+-- dest_state char(2),
+-- dest_country varchar(3),
+-- phase_flt_spec int,
+-- report_to_icao int,
+-- evacuation int,
+-- lchg_date text,
+-- lchg_userid text,
+-- afm_hrs_since char(1),
+-- rwy_num text,
+-- rwy_len int,
+-- rwy_width int,
+-- site_seeing char(1),
+-- air_medical char(1),
+-- med_type_flight char(4),
+-- acft_year int,
+-- fuel_on_board float,
+-- commercial_space_flight int,
+-- unmanned int,
+-- ifr_equipped_cert int,
+-- elt_mounted_aircraft int,
+-- elt_connected_antenna int,
+-- elt_manufacturer text,
+-- elt_model text,
+-- elt_reason_other int
+-- );
+
+-- load data local infile '/Users/aidencamilleri/Desktop/Data221/NTSB/NTSBData/aircraft.csv'
+-- into table aircraft
+-- fields terminated by ","
+-- optionally enclosed by '"'
+-- lines terminated by "\n"
+-- ignore 1 rows;
+
+-- create table engines(
+-- ev_id text,
+-- Aircraft_Key int,
+-- eng_no int,
+-- eng_type varchar(4),
+-- eng_mfgr text,
+-- eng_model text,
+-- power_units int,
+-- hp_or_lbs varchar(3),
+-- lchg_userid text,
+-- lchg_date text,
+-- carb_fuel_injection char(4),
+-- propeller_type char(4),
+-- propeller_make text,
+-- propeller_model text,
+-- eng_time_total int,
+-- eng_time_last_insp int,
+-- eng_time_overhaul int
+-- );
+
+-- load data local infile '/Users/aidencamilleri/Desktop/Data221/NTSB/NTSBData/engines.csv'
+-- into table engines
+-- fields terminated by ","
+-- optionally enclosed by '"'
+-- lines terminated by "\n"
+-- ignore 1 rows;
+
+-- create table Flight_Crew(
+-- ev_id text,
+-- Aircraft_Key int,
+-- crew_no int,
+-- crew_category varchar(4),
+-- crew_age int,
+-- crew_sex char(1),
+-- crew_city text,
+-- crew_res_state char(2),
+-- crew_res_country varchar(3),
+-- med_certf varchar(4),
+-- med_crtf_vldty varchar(4),
+-- date_lst_med text,
+-- crew_rat_endorse int,
+-- crew_inj_level char(4),
+-- seatbelts_used int,
+-- shldr_harn_used int,
+-- crew_tox_perf char(1),
+-- seat_occ_pic varchar(4),
+-- pc_profession varchar(3),
+-- bfr int,
+-- bfr_date text,
+-- ft_as_of text,
+-- lchg_date text,
+-- lchg_userid text,
+-- seat_occ_row int,
+-- infl_rest_inst char(1),
+-- infl_rest_depl char(1),
+-- child_restraint char(3),
+-- med_crtf_limit text,
+-- mr_faa_med_certf varchar(4),
+-- pilot_flying int,
+-- available_restraint char(1),
+-- restraint_used char(1)
+-- );
+
+-- load data local infile '/Users/aidencamilleri/Desktop/Data221/NTSB/NTSBData/Flight_Crew.csv'
+-- into table Flight_Crew
+-- fields terminated by ","
+-- optionally enclosed by '"'
+-- lines terminated by "\n"
+-- ignore 1 rows;
+
+
+-- create table Findings(
+--  ev_id text,
+--  Aircraft_Key int,
+--  finding_no int,
+--  finding_code text,
+--  finding_description text,
+--  category_no int,
+--  subcategory_no int,
+--  section_no int,
+--  subsection_no int,
+--  modifier_no int,
+--  Cause_Factor char(1),
+--  lchg_date text,
+--  lchg_userid text
+-- );
+
+-- load data local infile '/Users/aidencamilleri/Desktop/Data221/NTSB/NTSBData/Findings.csv'
+-- into table Findings
+-- fields terminated by ","
+-- optionally enclosed by '"'
+-- lines terminated by "\n"
+-- ignore 1 rows;
+
+
+
+--  -- Dropping empty/useless columns
+
+-- alter table events
+-- drop column faa_dist_office,
+-- drop column lchg_userid,
+-- drop column lchg_date,
+-- drop column fiche_number,
+-- drop column ntsb_notf_tm,
+-- drop column ntsb_notf_date,
+-- drop column ntsb_notf_from,
+-- drop column ntsb_docket,
+-- drop column wx_int_precip,
+-- drop column wx_dens_alt,
+-- drop column vis_rvv;
+
+-- alter table aircraft
+-- drop column acft_reg_cls,
+-- drop column oper_same,
+-- drop column oper_addr_same,
+-- drop column oprtng_cert,
+-- drop column oper_cert,
+-- drop column oper_cert_num,
+-- drop column dprt_timezn,
+-- drop column dest_same_local,
+-- drop column phase_flt_spec,
+-- drop column report_to_icao,
+-- drop column evacuation,
+-- drop column lchg_date,
+-- drop column lchg_userid,
+-- drop column commercial_space_flight,
+-- drop column unmanned,
+-- drop column ifr_equipped_cert,
+-- drop column elt_mounted_aircraft,
+-- drop column elt_connected_antenna,
+-- drop column elt_manufacturer,
+-- drop column elt_model,
+-- drop column elt_reason_other;
+
+-- alter table engines
+-- drop column lchg_userid,
+-- drop column lchg_date;
+
+-- -- Dropping anything not related to target prediction
+
+-- alter table Findings
+-- drop column finding_code,
+-- drop column finding_description,
+-- drop column section_no,
+-- drop column subsection_no,
+-- drop column modifier_no,
+-- drop column Cause_Factor,
+-- drop column lchg_date,
+-- drop column lchg_userid;
+
+-- alter table Flight_Crew
+-- drop column crew_rat_endorse,
+-- drop column seatbelts_used,
+-- drop column shldr_harn_used,
+-- drop column bfr,
+-- drop column lchg_date,
+-- drop column lchg_userid,
+-- drop column seat_occ_row,
+-- drop column infl_rest_inst,
+-- drop column infl_rest_depl,
+-- drop column child_restraint,
+-- drop column med_crtf_limit,
+-- drop column pilot_flying,
+-- drop column available_restraint,
+-- drop column restraint_used;
