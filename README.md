@@ -51,7 +51,7 @@ The model was most accurate at predicting the following classes:
 ## Interpretation
 
 1. **Surface-Level Features**: These features can generally predict the cause of the accident with reasonable accuracy.
-2. **Influential Factors**: Temperature, crew age, wind velocity, number of passenger and flight crew seats, day of the week, and month of the flight are significant factors.
+2. **Influential Factors**: Temperature, crew age, wind velocity, number of passenger and flight crew seats, day of the week, and month of the flight are significant factors for the accurate prediction of accident cause. This provides a starting point for the focusing of mitigation efforts into preventing future aviation accidents.
 
 ## Model Issues and Future Work
 
